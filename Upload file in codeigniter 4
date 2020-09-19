@@ -1,0 +1,22 @@
+<?php namespace App\Controllers;
+
+use CodeIgniter\Controller;
+
+
+class User extends BaseController
+{
+	public function index()
+	{
+		return view('image');
+	}
+
+	public function file_upload()
+	{
+		$file = $this->request->getFile('img');
+		if($file->isValid())
+		{
+			$file->store();
+		}
+	}
+}
+?>
